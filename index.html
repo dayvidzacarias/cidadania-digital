@@ -3,47 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concurso Agrinho 2026 | Educação e Campo</title>
+    <title>Portal Cidadania Digital 2026</title>
     <style>
-        /* --- Configurações Globais --- */
+        /* --- Variáveis de Design (Tokens) --- */
         :root {
-            --cor-primaria: #2e7d32; /* Verde Agrinho */
-            --cor-secundaria: #f9a825; /* Amarelo Sol / Campo */
-            --bg-claro: #f1f8e9;
-            --texto-escuro: #263238;
-            --branco: #ffffff;
+            --primary: #0284c7;       /* Azul Conectividade */
+            --primary-dark: #0369a1;  /* Azul Escuro */
+            --primary-light: #e0f2fe; /* Azul Claro */
+            --accent: #f59e0b;        /* Âmbar / Alerta */
+            --text-dark: #1e293b;     /* Grafite */
+            --text-light: #64748b;    /* Cinza */
+            --bg-global: #f8fafc;     /* Fundo Limpo */
+            --bg-card: #ffffff;       /* Branco */
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.25s ease;
         }
 
+        /* --- Reset e Configurações Base --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-claro);
-            color: var(--texto-escuro);
+            background-color: var(--bg-global);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
         /* --- Cabeçalho (Header) --- */
-        header {
-            background-color: var(--cor-primaria);
-            color: var(--branco);
-            padding: 2rem 1rem;
+        .main-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 3rem 1.5rem;
             text-align: center;
-            border-bottom: 5px solid var(--cor-secundaria);
+            box-shadow: var(--shadow);
         }
 
-        header h1 {
+        .main-header h1 {
             font-size: 2.5rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
 
-        header p {
+        .main-header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* --- Conteúdo Principal --- */
+        /* --- Estrutura de Layout --- */
+        .container {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        /* --- Grid de Pilares --- */
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .pilar-card {
+            background-color: var(--bg-global);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .pilar-card:hover {
+            transform: translateY(-2px);
+            border-left-color: var(--accent);
+        }
+
+        .pilar-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- Lista de Boas Práticas --- */
+        .lista-praticas {
+            list-style: none;
+        }
+
+        .lista-praticas li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .lista-praticas li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* --- Formulário / Feedback --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--text-light);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.85rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* --- Rodapé (Footer) --- */
+        .main-footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .main-footer p {
+            opacity: 0.8;
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 600px) {
+            .main-header h1 { font-size: 2rem; }
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Cidadania Digital 2026</h1>
+        <p>Construindo uma presença online consciente, ética, segura e responsável para a sociedade.</p>
+    </header>
+
+    <main class="container">
+        
+        <section id="conceito">
+            <h2>O que é Cidadania Digital?</h2>
+            <p>Ser um cidadão digital significa usar a tecnologia de forma responsável, ética e crítica. Envolve compreender os impactos das nossas ações no ambiente virtual, respeitar o espaço alheio, proteger dados pessoais e saber discernir informações reais de conteúdos manipulados ou enganosos.</p>
+        </section>
+
+        <section id="pilares">
+            <h2>Pilares Essenciais</h2>
+            <div class="pilares-grid">
+                <div class="pilar-card">
+                    <h3>Segurança e Privacidade</h3>
+                    <p>Proteção de contas com senhas fortes, autenticação em duas etapas e cuidado com o compartilhamento de dados sensíveis.</p>
+                </div>
+                <div class="pilar-card">
+                    <h3>Netiqueta e Empatia</h3>
+                    <p>Comunicação respeitosa em redes sociais, fóruns e jogos, combatendo o discurso de ódio e o cyberbullying.</p>
+                </div>
+                <div class="pilar-card">
+                    <h3>Pensamento Crítico</h3>
+                    <p>Habilidade de avaliar a veracidade de notícias, imagens e vídeos gerados por ferramentas automatizadas antes de compartilhar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="boas-praticas">
+            <h2>Guia de Sobrevivência Digital</h2>
+            <ul class="lista-praticas">
+                <li><strong>Verifique a fonte:</strong> Antes de repassar uma informação bombástica, verifique se portais de notícias confiáveis validaram o fato.</li>
+                <li><strong>Configure sua privacidade:</strong> Revise periodicamente as permissões de aplicativos e redes sociais sobre seus dados.</li>
+                <li><strong>Pense antes de postar:</strong> A pegada digital deixada por comentários ou fotos pode durar muitos anos na rede.</li>
+                <li><strong>Respeite os direitos autorais:</strong> Sempre dê o devido crédito ao utilizar imagens, textos ou recursos criados por terceiros.</li>
+            </ul>
+        </section>
+
+        <section id="compromisso">
+            <h2>Faça sua Parte</h2>
+            <p>Tem alguma dúvida sobre segurança digital ou quer compartilhar uma boa prática adotada na sua rotina virtual? Deixe sua mensagem abaixo:</p>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Relato ou Dúvida:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva aqui seu comentário sobre ética e segurança na rede..."></textarea>
+                </div>
+
+                <button type="submit">Enviar Contribuição</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Guia de Educação Digital. Conteúdo voltado à conscientização pública e comunitária.</p>
+    </footer>
+
+</body>
+</html>
