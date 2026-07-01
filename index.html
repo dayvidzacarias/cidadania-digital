@@ -3,28 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defesa Digital | Conscientização contra Deepfakes e Desinformação</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="theme-dark">
+    <title>Concurso Agrinho 2026 | Educação e Campo</title>
+    <style>
+        /* --- Configurações Globais --- */
+        :root {
+            --cor-primaria: #2e7d32; /* Verde Agrinho */
+            --cor-secundaria: #f9a825; /* Amarelo Sol / Campo */
+            --bg-claro: #f1f8e9;
+            --texto-escuro: #263238;
+            --branco: #ffffff;
+        }
 
-    <div id="scroll-progress" aria-hidden="true"></div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="shield-icon">🛡️</span>
-                <h1>Cidadania<span class="gradient-text">Digital</span></h1>
-            </div>
-            <button id="theme-toggle" class="btn-toggle" aria-label="Alternar tema visual">
-                <span class="icon">🌓</span> <span class="text">Modo Claro</span>
-            </button>
-        </div>
-    </header>
+        body {
+            background-color: var(--bg-claro);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
 
-    <main class="content-wrapper">
-        <section class="hero-section" id="contexto">
-            <span class="badge">Alerta Tecnológico</span>
-            <h2>A Era da Desinformação Sintética</h2>
-            <p>Com o avanço exponencial da Inteligência Artificial, a criação de <strong>deepfakes</strong> (mídias manipuladas hiper-realistas) tornou-se um dos maiores desafios para a democracia e a segurança digital. Compreender os mecanismos de criação e validação dessas mídias é um dever da cidadania moderna.</p>
-        </section>
+        /* --- Cabeçalho (Header) --- */
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--cor-secundaria);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* --- Conteúdo Principal --- */
