@@ -16,66 +16,100 @@
     </header>
 
     <main>
-        <!-- Seção 1: Introdução Conceitual -->
         <section class="hero-section">
             <h2>O Impacto das Deepfakes na Sociedade</h2>
-            <p>A Inteligência Artificial avançou rapidamente. Hoje, vídeos e áudios falsos parecem reais. Compreender essa tecnologia é o primeiro passo para exercer sua cidadania digital e proteger a verdade.</p>
+            <p>A Inteligência Artificial avançou rapidamente. Hoje, vídeos, imagens e áudios falsos gerados por computador parecem perfeitamente reais. Compreender essa tecnologia e o fenômeno das <em>fake news</em> automatizadas é o primeiro passo para exercer sua cidadania digital, proteger a verdade e garantir um ambiente escolar seguro e crítico.</p>
         </section>
 
-        <!-- Seção 2: Guia de Identificação -->
         <section class="guide-section">
             <h2>Como Identificar uma Deepfake?</h2>
+            <p class="section-description">Embora os algoritmos estejam cada vez mais refinados, a maioria das mídias manipuladas ainda deixa rastros sutis. Fique atento aos seguintes pontos:</p>
+            
             <div class="cards-container">
                 <div class="card">
+                    <div class="card-icon">👁️</div>
                     <h3>Piscar de Olhos</h3>
-                    <p>Muitas IA falham em reproduzir o ritmo natural do piscar de olhos humano.</p>
+                    <p>Muitas ferramentas de IA falham em reproduzir o ritmo natural, a frequência ou a simetria do piscar de olhos humano.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">🗣️</div>
                     <h3>Sincronia do Áudio</h3>
-                    <p>Preste atenção se o movimento dos lábios condiz exatamente com o som emitido.</p>
+                    <p>Preste atenção se o movimento dos lábios condiz exatamente com o som emitido e se há pequenas pausas artificiais na fala.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">🖼️</div>
                     <h3>Falhas nas Bordas</h3>
-                    <p>Desfocados estranhos perto das orelhas, cabelos e pescoço indicam manipulação.</p>
+                    <p>Desfocados estranhos, sombras inconsistentes perto das orelhas, cabelos e pescoço costumam indicar manipulação digital.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Iluminação e Textura</h3>
+                    <p>Rostos excessivamente lisos, falta de rugas naturais ao sorrir ou reflexos idênticos nos dois olhos são indícios de geração por IA.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Seção 3: Quiz Interativo (Atendendo aos requisitos do DOM e Form) -->
+        <section class="tips-section">
+            <h2>Boas Práticas de Segurança Digital</h2>
+            <ul class="tips-list">
+                <li><strong>Não repasse por impulso:</strong> Se a notícia causa uma reação emocional forte (raiva ou euforia), desconfie antes de compartilhar.</li>
+                <li><strong>Cheque a fonte original:</strong> Busque o conteúdo em motores de busca para ver se grandes veículos de comunicação validaram o fato.</li>
+                <li><strong>Utilize ferramentas de busca reversa:</strong> Plataformas como o Google Imagens ajudam a descobrir se uma foto foi tirada de contexto ou modificada.</li>
+            </ul>
+        </section>
+
         <section class="quiz-section">
             <h2>Quiz Anti-Desinformação</h2>
-            <p>Selecione a alternativa correta e teste seus conhecimentos sobre mídias manipuladas.</p>
+            <p>Selecione as alternativas corretas e teste seus conhecimentos sobre mídias manipuladas e cidadania digital.</p>
             
             <form id="quiz-form">
                 <div class="form-group">
-                    <label class="question-label">1. Se você receber um vídeo bombástico de um político, qual deve ser sua primeira ação?</label>
+                    <label class="question-label">1. Se você receber um vídeo bombástico de um político ou celebridade, qual deve ser sua primeira ação?</label>
                     
                     <div class="radio-option">
-                        <input type="radio" id="opt1" name="quiz-q1" value="errado1">
-                        <label for="opt1">Compartilhar imediatamente nos grupos de família.</label>
+                        <input type="radio" id="q1-opt1" name="quiz-q1" value="errado1">
+                        <label for="q1-opt1">Compartilhar imediatamente nos grupos de mensagens da família e da escola.</label>
                     </div>
 
                     <div class="radio-option">
-                        <input type="radio" id="opt2" name="quiz-q1" value="correto">
-                        <label for="opt2">Verificar se veículos de imprensa confiáveis publicaram o fato.</label>
+                        <input type="radio" id="q1-opt2" name="quiz-q1" value="correto">
+                        <label for="q1-opt2">Pausar e verificar se veículos de imprensa confiáveis ou agências de checagem publicaram o fato.</label>
                     </div>
 
                     <div class="radio-option">
-                        <input type="radio" id="opt3" name="quiz-q1" value="errado2">
-                        <label for="opt3">Acreditar cegamente, pois vídeos não podem ser editados.</label>
+                        <input type="radio" id="q1-opt3" name="quiz-q1" value="errado2">
+                        <label for="q1-opt3">Acreditar cegamente, pois vídeos reais gravados por celulares não podem ser editados ou clonados.</label>
                     </div>
                 </div>
 
-                <button type="submit" class="btn-submit">Verificar Resposta</button>
+                <div class="form-group">
+                    <label class="question-label">2. O que caracteriza o termo "Fake News Automatizada"?</label>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="q2-opt1" name="quiz-q2" value="errado1">
+                        <label for="q2-opt1">Notícias escritas exclusivamente à mão por jornalistas de grandes portais.</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="q2-opt2" name="quiz-q2" value="errado2">
+                        <label for="q2-opt2">Erros de digitação comuns que acontecem quando um sistema operacional atualiza.</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="q2-opt3" name="quiz-q2" value="correto">
+                        <label for="q2-opt3">O uso de robôs (bots) e algoritmos de IA para criar e disseminar boatos em larga escala na internet.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Verificar Respostas</button>
             </form>
 
-            <!-- Div manipulada dinamicamente pelo JS para exibir o feedback -->
             <div id="quiz-feedback" class="feedback-box hidden"></div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 Projeto Cidadania Digital. Desenvolvido para fins educacionais.</p>
+        <p>&copy; 2026 Projeto Cidadania Digital. Desenvolvido para fins educacionais e comunitários.</p>
     </footer>
 
     <script src="js/script.js"></script>
