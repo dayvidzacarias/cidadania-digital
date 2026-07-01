@@ -1,38 +1,54 @@
 /* ==========================================================================
-   Variáveis de Cores (Suporte Dinâmico a Temas)
+   Variáveis de Ambiente e Temas (Modo Claro Padrão)
    ========================================================================== */
 :root {
-    --bg-color: #f7fafc;
-    --text-color: #2d3748;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
     --card-bg: #ffffff;
-    --header-bg: #1a365d;
-    --header-text: #ffffff;
-    --accent-color: #3182ce;
-    --accent-hover: #2b6cb0;
-    --feedback-correct-bg: #c6f6d5;
-    --feedback-correct-text: #22543d;
-    --feedback-wrong-bg: #fed7d7;
-    --feedback-wrong-text: #742a2a;
+    --header-bg: #0f172a;
+    --header-text: #f8fafc;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-focus: rgba(37, 99, 235, 0.4);
+    
+    --correct-bg: #dcfce7;
+    --correct-text: #166534;
+    --correct-border: #bbf7d0;
+    
+    --wrong-bg: #fee2e2;
+    --wrong-text: #991b1b;
+    --wrong-border: #fca5a5;
+    
     --border-color: #e2e8f0;
-    --transition-speed: 0.3s;
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Alteração dos valores das variáveis para o Modo Escuro */
+/* Modificadores para o Modo Escuro */
 body.dark-mode {
-    --bg-color: #1a202c;
-    --text-color: #f7fafc;
-    --card-bg: #2d3748;
-    --header-bg: #111622;
-    --header-text: #f7fafc;
-    --border-color: #4a5568;
-    --feedback-correct-bg: #22543d;
-    --feedback-correct-text: #c6f6d5;
-    --feedback-wrong-bg: #742a2a;
-    --feedback-wrong-text: #fed7d7;
+    --bg-color: #0b0f19;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --card-bg: #161e2e;
+    --header-bg: #0d1321;
+    --header-text: #f1f5f9;
+    --border-color: #2d3748;
+    --accent-color: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-focus: rgba(59, 130, 246, 0.4);
+    
+    --correct-bg: #064e3b;
+    --correct-text: #d1fae5;
+    --correct-border: #047857;
+    
+    --wrong-bg: #7f1d1d;
+    --wrong-text: #fee2e2;
+    --wrong-border: #b91c1c;
 }
 
 /* ==========================================================================
-   Resets e Configurações Globais
+   Reset e Elementos Globais
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -40,234 +56,6 @@ body.dark-mode {
     padding: 0;
 }
 
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-section {
-    margin-bottom: 35px;
-    padding: 30px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: var(--accent-color);
-    font-size: 1.6rem;
-}
-
-p.section-description {
-    margin-bottom: 20px;
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
-/* ==========================================================================
-   Header e Estrutura de Topo
-   ========================================================================== */
-.main-header {
-    background-color: var(--header-bg);
-    color: var(--header-text);
-    padding: 20px 0;
-    border-bottom: 4px solid var(--accent-color);
-    transition: background-color var(--transition-speed);
-}
-
-.header-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.header-container h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.btn-toggle {
-    background-color: transparent;
-    color: var(--header-text);
-    border: 2px solid var(--header-text);
-    padding: 8px 18px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all var(--transition-speed);
-}
-
-.btn-toggle:hover {
-    background-color: var(--header-text);
-    color: var(--header-bg);
-}
-
-/* ==========================================================================
-   Seção de Cards (Grid Responsivo)
-   ========================================================================== */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.card {
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    padding: 25px 20px;
-    border-radius: 8px;
-    transition: transform 0.2s, background-color var(--transition-speed);
-}
-
-.card:hover {
-    transform: translateY(-4px);
-}
-
-.card-icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: var(--text-color);
-}
-
-/* ==========================================================================
-   Lista de Boas Práticas
-   ========================================================================== */
-.tips-list {
-    list-style-type: none;
-}
-
-.tips-list li {
-    margin-bottom: 12px;
-    padding-left: 25px;
-    position: relative;
-}
-
-.tips-list li::before {
-    content: "🛡️";
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* ==========================================================================
-   Formulários e Elementos do Quiz
-   ========================================================================== */
-.form-group {
-    margin: 25px 0;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
-}
-
-.form-group:last-of-type {
-    border-bottom: none;
-}
-
-.question-label {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    padding: 14px 18px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.radio-option:hover {
-    background-color: var(--border-color);
-}
-
-.radio-option input[type="radio"] {
-    margin-right: 14px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.radio-option label {
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-}
-
-.btn-submit {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-submit:hover {
-    background-color: var(--accent-hover);
-}
-
-/* Container de feedback */
-.feedback-box {
-    margin-top: 25px;
-    padding: 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-.feedback-box.correct {
-    background-color: var(--feedback-correct-bg);
-    color: var(--feedback-correct-text);
-    border: 1px solid var(--feedback-correct-text);
-}
-
-.feedback-box.wrong {
-    background-color: var(--feedback-wrong-bg);
-    color: var(--feedback-wrong-text);
-    border: 1px solid var(--feedback-wrong-text);
-}
-
-.hidden {
-    display: none;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-.main-footer {
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
-    color: #718096;
-    border-top: 1px solid var(--border-color);
-    margin-top: 50px;
+html {
+    scroll-behavior: smooth;
 }
